@@ -18,16 +18,21 @@
     $.fn.textLimit = function( limit , callback ) {
         if ( typeof callback !== 'function' ) var callback = function() {};
         return this.each(function() {
+            var inputVal;
             this.limit = limit;
             this.callback = callback;
             this.onfocus = this.onfocusout;  // NEW LINE
             this.onfocusout = this.onchange; // NEW LINE
             this.onchange = this.onkeydown;  // NEW LINE
             this.onkeydown = this.onkeyup = function() {
-                this.value = this.value.substr(0,this.limit);
-                this.reached = this.limit - this.value.length;
+                inputVal = this.value.substr(0,this.limit);
+                this.reached = this.limit - inputVal.length;
                 this.reached = ( this.reached == 0 ) ? true : false;
-                return this.callback( this.value.length, this.limit, this.reached );
+                // we've hit our limit
+                if (this.reached) {
+                    this.value = inputVal;
+                }
+                return this.callback( inputVal.length, this.limit, this.reached );                
             }
         });
     };
