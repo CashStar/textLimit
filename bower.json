@@ -1,7 +1,7 @@
 {
   "name": "textLimit",
   "main": "textLimit.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/CashStar/textLimit",
   "authors": [
     "Shawn Campbell <scampbell@cashstar.com>"
