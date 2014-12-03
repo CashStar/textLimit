@@ -10,6 +10,7 @@
 * www.labs.skengdon.com/textLimit/js/textLimit.min.js
 */
 ;(function($){
+    // let's add a comment
     $.fn.clearTextLimit = function() {
         return this.each(function() {
             this.onkeydown = this.onkeyup = null;
@@ -32,7 +33,7 @@
                 if (this.reached) {
                     this.value = inputVal;
                 }
-                return this.callback( inputVal.length, this.limit, this.reached );                
+                return this.callback( inputVal.length, this.limit, this.reached );
             }
         });
     };
