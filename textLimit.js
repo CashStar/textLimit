@@ -10,7 +10,6 @@
 * www.labs.skengdon.com/textLimit/js/textLimit.min.js
 */
 ;(function($){
-    // let's add a comment
     $.fn.clearTextLimit = function() {
         return this.each(function() {
             this.onkeydown = this.onkeyup = null;
